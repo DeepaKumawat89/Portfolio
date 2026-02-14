@@ -18,7 +18,7 @@ const Contact = () => {
                                     <div className="w-2 h-2 rounded-full bg-pista-dark animate-pulse"></div>
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-pista-dark">Open for Opportunities</span>
                                 </div>
-                                <h2 className="text-5xl md:text-7xl font-bold text-text tracking-tighter uppercase font-outfit">
+                                <h2 className="text-5xl md:text-7xl font-bold text-text tracking-tighter uppercase font-outfit whitespace-nowrap">
                                     Let's <span className="text-pista-dark">Connect</span>
                                 </h2>
                                 <p className="text-base md:text-lg text-text-muted leading-relaxed max-w-md">

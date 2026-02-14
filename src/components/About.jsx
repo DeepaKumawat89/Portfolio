@@ -18,7 +18,7 @@ const About = () => {
                         <span className="text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">02 // PROFILE</span>
                         <div className="h-px w-16 bg-pista-dark"></div>
                     </div>
-                    <h2 className="text-6xl md:text-8xl font-bold text-text tracking-tighter uppercase" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    <h2 className="text-6xl md:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         About <span className="text-pista-dark">me</span>
                     </h2>
                 </div>
@@ -38,24 +38,19 @@ const About = () => {
                 </div>
 
                 {/* Education Section - Minimal Text */}
-                <div className="max-w-4xl mx-auto text-center space-y-6 animate-[fadeInUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                    <div className="space-y-2">
-                        <h3 className="text-2xl md:text-3xl font-bold text-text" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                            Bachelor of Technology in Computer Science and Engineering
-                        </h3>
-                        <p className="text-lg md:text-xl text-pista-dark font-bold tracking-tight">
-                            2021 — 2025
-                        </p>
-                    </div>
-
-                    <div className="space-y-1">
-                        <p className="text-xl text-text font-medium" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                            D.Y. Patil College of Engineering and Technology, Kolhapur
-                        </p>
-                        <p className="text-lg text-text-muted font-bold tracking-widest uppercase">
-                            CGPA: <span className="text-pista-dark font-black">7.87/10</span>
-                        </p>
-                    </div>
+                <div className="max-w-4xl mx-auto text-center space-y-3 animate-[fadeInUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+                    <h3 className="text-2xl md:text-3xl font-bold text-text" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                        Bachelor of Technology in Computer Science and Engineering
+                    </h3>
+                    <p className="text-lg md:text-xl text-pista-dark font-bold tracking-tight">
+                        2021 — 2025
+                    </p>
+                    <p className="text-xl text-text font-medium" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                        D.Y. Patil College of Engineering and Technology, Kolhapur
+                    </p>
+                    <p className="text-lg text-text-muted font-bold tracking-widest uppercase">
+                        CGPA: <span className="text-pista-dark font-black">7.87/10</span>
+                    </p>
                 </div>
 
                 {/* Industrial Background Watermark */}

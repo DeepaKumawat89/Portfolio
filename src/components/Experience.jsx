@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DetailModal from './DetailModal';
 
 const Experience = () => {
+    const [selectedExperience, setSelectedExperience] = useState(null);
+
     const experiences = [
         {
             id: '01',
@@ -10,6 +13,7 @@ const Experience = () => {
             period: '2024 – 2025',
             location: 'Kolhapur',
             description: 'Engineering precision RFID solutions for warehouse logistics, focusing on long-range material tracking and structural inventory optimization.',
+            fullDescription: 'Developed advanced RFID-based warehouse management system using Flutter and Dart, enabling real-time inventory tracking with 30-meter scan range capability. Integrated RFID SDK for seamless hardware communication and implemented efficient data synchronization algorithms. Created intuitive mobile interface for warehouse staff to manage inventory operations, reducing manual data entry by 85%. Optimized app performance for industrial environments with offline-first architecture and background sync capabilities. Collaborated with hardware engineering team to calibrate RFID readers and troubleshoot integration issues.',
             stack: ['Flutter', 'RFID SDK', 'Dart'],
             metric: '30M SCAN RANGE'
         },
@@ -21,6 +25,7 @@ const Experience = () => {
             period: '2024',
             location: 'Kolhapur',
             description: 'Developing reactive management ecosystems for visitor and maintenance coordination, implementing high-performance API bridges.',
+            fullDescription: 'Built comprehensive visitor management and maintenance coordination system using Flutter, Spring Boot, and GetX state management. Developed RESTful API integrations for real-time visitor check-in/check-out tracking and maintenance request workflows. Implemented reactive UI patterns with GetX for seamless state management across the application. Created notification system for instant alerts on visitor arrivals and maintenance updates. Achieved 95% crash-free rate through comprehensive error handling and testing. Optimized API response times and implemented efficient caching strategies for improved performance.',
             stack: ['Flutter', 'Spring Boot', 'GetX'],
             metric: '95% CRASH-FREE'
         }
@@ -43,8 +48,8 @@ const Experience = () => {
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">03 // CAREER</span>
                         <div className="h-px w-8 md:w-16 bg-pista-dark"></div>
                     </div>
-                    <h2 className="text-5xl md:text-8xl font-bold text-text tracking-tighter uppercase" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                        TECHNICAL <span className="text-pista-dark text-nowrap">HISTORY</span>
+                    <h2 className="text-5xl md:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                        TECHNICAL <span className="text-pista-dark">HISTORY</span>
                     </h2>
                 </div>
 
@@ -66,18 +71,19 @@ const Experience = () => {
                     </div>
                 </div>
 
-                {/* Grid Layout - Matching Projects Style */}
-                <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10 max-w-6xl mx-auto">
+                {/* Grid Layout - Single Column on Mobile */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-8 max-w-4xl mx-auto">
                     {experiences.map((exp, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-2xl md:rounded-[2.5rem] p-4 md:p-12 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]"
+                            onClick={() => setSelectedExperience(exp)}
+                            className="group relative bg-white rounded-2xl md:rounded-[2rem] p-3 md:p-8 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards] cursor-pointer"
                             style={{ animationDelay: `${index * 0.15 + 0.4}s` }}
                         >
                             {/* Inner Kinetic Gradient Blobs */}
                             <div className="absolute -top-10 -right-10 w-32 h-32 md:w-48 md:h-48 bg-pista/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
 
-                            <div className="relative z-10 space-y-4 md:space-y-10">
+                            <div className="relative z-10 space-y-3 md:space-y-6">
                                 {/* Header: Category & Period */}
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-3">
@@ -101,6 +107,12 @@ const Experience = () => {
                                     <p className="text-sm md:text-base text-text-muted leading-relaxed opacity-80">
                                         {exp.description}
                                     </p>
+                                    <div className="text-xs text-pista-dark font-semibold mt-2 flex items-center gap-1">
+                                        <span>Click for full details</span>
+                                        <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
                                 </div>
 
                                 {/* Stack Pills */}
@@ -114,7 +126,7 @@ const Experience = () => {
                             </div>
 
                             {/* Footer Metrics & Kinetic Link */}
-                            <div className="relative z-10 mt-6 md:mt-12 flex items-end justify-between border-t border-pista/10 pt-4 md:pt-8">
+                            <div className="relative z-10 mt-4 md:mt-8 flex items-end justify-between border-t border-pista/10 pt-3 md:pt-6">
                                 <div className="space-y-0.5">
                                     <div className="text-[7px] md:text-[10px] font-black text-pista-dark/40 uppercase tracking-widest">metric</div>
                                     <div className="text-sm md:text-xl font-black text-text tracking-tighter italic">
@@ -134,6 +146,14 @@ const Experience = () => {
                     EVOLUTION
                 </div>
             </div>
+
+            {/* Detail Modal */}
+            <DetailModal
+                isOpen={selectedExperience !== null}
+                onClose={() => setSelectedExperience(null)}
+                data={selectedExperience}
+                type="experience"
+            />
         </section>
     );
 };

@@ -1,32 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DetailModal from './DetailModal';
 
 const Projects = () => {
+    const [selectedProject, setSelectedProject] = useState(null);
+
     const projects = [
         {
             id: '01',
-            category: 'UI/UX ARCHITECTURE',
+            category: 'FULL-STACK E-COMMERCE',
             title: 'E-Commerce Platform',
             year: '2024',
-            description: 'Building a high-performance rendering engine for mobile commerce. Focused on state management and real-time sync.',
-            stack: ['Flutter', 'GetX', 'Firebase'],
-            metric: '95% CRASH-FREE'
+            description: 'Full-stack e-commerce application with product catalog, shopping cart, and secure checkout functionality.',
+            fullDescription: 'Developed a comprehensive e-commerce platform using React for frontend and Spring Boot for backend services. Implemented product catalog management with search and filter capabilities, shopping cart functionality with real-time updates, and secure checkout process. Integrated MySQL database for data persistence and RESTful APIs for seamless frontend-backend communication. Created responsive UI with modern design patterns and optimized performance through code splitting and lazy loading. Implemented user authentication and authorization using JWT tokens. Added admin dashboard for product and order management.',
+            stack: ['React', 'Spring Boot', 'MySQL'],
+            metric: 'FULL-STACK'
         },
         {
             id: '02',
-            category: 'SYSTEM INTELLIGENCE',
+            category: 'AI & COMPUTER VISION',
             title: 'Vision Assistive AI',
             year: '2024',
-            description: 'Architecting an edge-computing bridge for scene interpretation. Implementing low-latency CV pipelines.',
-            stack: ['NVIDIA', 'Jetson', 'Python'],
+            description: 'AI-powered assistive technology for visually impaired users using computer vision and edge computing.',
+            fullDescription: 'Developed an intelligent assistive system for visually impaired individuals using NVIDIA Jetson platform for edge computing. Implemented real-time object detection and scene interpretation using Python and computer vision libraries. Created low-latency processing pipeline achieving 45ms response time for critical object recognition tasks. Integrated text-to-speech functionality for audio feedback on detected objects and obstacles. Utilized deep learning models optimized for edge deployment with TensorRT acceleration. Designed intuitive audio interface for seamless user interaction without visual feedback.',
+            stack: ['Python', 'NVIDIA Jetson', 'OpenCV'],
             metric: '45ms LATENCY'
         },
         {
             id: '03',
-            category: 'URBAN INFRASTRUCTURE',
+            category: 'IOT & MOBILE APP',
             title: 'Smart City Parking',
             year: '2023',
-            description: 'Digitizing physical parking assets through cloud-based verification and automated sensor integration.',
-            stack: ['Flutter', 'Cloud Functions', 'QR'],
+            description: 'Award-winning smart parking solution with IoT sensors, QR-based verification, and real-time availability tracking.',
+            fullDescription: 'Won 1st prize in hackathon for developing innovative smart parking solution that digitizes urban parking infrastructure. Built Flutter-based cross-platform mobile application for real-time parking spot discovery and reservation. Implemented QR code-based verification system for contactless check-in and check-out. Integrated IoT sensors with Firebase Cloud Functions for automated occupancy detection and real-time updates. Developed admin web dashboard using React for parking management and analytics. Reduced average parking search time by 60% in pilot deployment. Implemented payment gateway integration for seamless transactions.',
+            stack: ['Flutter', 'Firebase', 'IoT Sensors'],
             metric: '1st PRIZE'
         }
     ];
@@ -47,17 +53,18 @@ const Projects = () => {
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">04 // WORKS</span>
                         <div className="h-px w-8 md:w-16 bg-pista-dark"></div>
                     </div>
-                    <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-text tracking-tighter uppercase" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         SELECTED <span className="text-pista-dark">PROJECTS</span>
                     </h2>
                 </div>
 
-                {/* 2-Column Rounded Card Grid on Mobile */}
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10">
+                {/* Single Column on Mobile, 3 Columns on Desktop */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-10">
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-2xl md:rounded-[2.5rem] p-4 md:p-10 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-6 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]"
+                            onClick={() => setSelectedProject(project)}
+                            className="group relative bg-white rounded-2xl md:rounded-[2.5rem] p-4 md:p-10 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-6 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards] cursor-pointer"
                             style={{ animationDelay: `${index * 0.15}s` }}
                         >
                             {/* Inner Kinetic Gradient Blobs */}
@@ -79,9 +86,15 @@ const Projects = () => {
                                     <h3 className="text-base md:text-3xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300">
                                         {project.title}
                                     </h3>
-                                    <p className="text-[11px] md:text-base text-text-muted leading-relaxed line-clamp-3 md:line-clamp-none">
+                                    <p className="text-[11px] md:text-base text-text-muted leading-relaxed">
                                         {project.description}
                                     </p>
+                                    <div className="text-xs text-pista-dark font-semibold mt-2 flex items-center gap-1">
+                                        <span>Click for full details</span>
+                                        <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
                                 </div>
 
                                 {/* Tech Stack Pill Display */}
@@ -115,6 +128,14 @@ const Projects = () => {
                     ENGINEERING
                 </div>
             </div>
+
+            {/* Detail Modal */}
+            <DetailModal
+                isOpen={selectedProject !== null}
+                onClose={() => setSelectedProject(null)}
+                data={selectedProject}
+                type="project"
+            />
         </section>
     );
 };

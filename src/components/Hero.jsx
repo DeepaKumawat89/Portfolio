@@ -17,14 +17,42 @@ const Hero = () => {
                     <div className="max-w-3xl space-y-12 lg:space-y-24 w-full">
                         <div className="space-y-4 lg:space-y-6">
                             <div className="flex items-center gap-4 animate-[fadeIn_0.6s_ease-out]">
-                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-pista-dark">Portfolio // 2024</span>
+                                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-pista-dark">Portfolio // 2026</span>
                                 <div className="h-px w-12 md:w-24 bg-pista-dark"></div>
                             </div>
                             <div className="space-y-0 text-left">
-                                <h1 className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold text-text leading-[0.85] tracking-tighter animate-[slideInLeft_0.8s_cubic-bezier(0.16,1,0.3,1)]" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                                <h1
+                                    className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold text-text leading-[0.85] tracking-tighter animate-[slideInLeft_0.8s_cubic-bezier(0.16,1,0.3,1)]"
+                                    style={{
+                                        fontFamily: "'Times New Roman', Times, serif",
+                                        textShadow: `
+                                            1px 1px 0 rgba(44, 62, 80, 0.1),
+                                            2px 2px 0 rgba(44, 62, 80, 0.1),
+                                            3px 3px 0 rgba(44, 62, 80, 0.1),
+                                            4px 4px 0 rgba(44, 62, 80, 0.1),
+                                            5px 5px 0 rgba(44, 62, 80, 0.1),
+                                            6px 6px 0 rgba(44, 62, 80, 0.1),
+                                            7px 7px 10px rgba(0, 0, 0, 0.1)
+                                        `
+                                    }}
+                                >
                                     DEEPAK
                                 </h1>
-                                <h1 className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold text-pista-dark leading-[0.85] tracking-tighter translate-x-2 md:translate-x-12 animate-[slideInLeft_1s_cubic-bezier(0.16,1,0.3,1)]" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                                <h1
+                                    className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold text-pista-dark leading-[0.85] tracking-tighter translate-x-2 md:translate-x-12 animate-[slideInLeft_1s_cubic-bezier(0.16,1,0.3,1)]"
+                                    style={{
+                                        fontFamily: "'Times New Roman', Times, serif",
+                                        textShadow: `
+                                            1px 1px 0 rgba(174, 213, 129, 0.3),
+                                            2px 2px 0 rgba(174, 213, 129, 0.3),
+                                            3px 3px 0 rgba(174, 213, 129, 0.3),
+                                            4px 4px 0 rgba(174, 213, 129, 0.3),
+                                            5px 5px 0 rgba(174, 213, 129, 0.3),
+                                            6px 6px 0 rgba(174, 213, 129, 0.3),
+                                            7px 7px 10px rgba(0, 0, 0, 0.15)
+                                        `
+                                    }}
+                                >
                                     KUMAWAT
                                 </h1>
                             </div>
