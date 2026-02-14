@@ -74,14 +74,20 @@ const Navbar = () => {
                 {/* Mobile Menu Dropdown */}
                 {mobileMenuOpen && (
                     <>
-                        <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)}></div>
-                        <div className="absolute top-full left-0 right-0 mt-4 mx-2 p-6 glass rounded-[2rem] shadow-2xl border-white/40 animate-[fadeIn_0.3s_ease-out] md:hidden z-50 flex flex-col gap-2">
+                        {/* Backdrop Overlay with Blur */}
+                        <div
+                            className="fixed inset-0 bg-black/50 backdrop-blur-md z-40 md:hidden animate-[fadeIn_0.3s_ease-out]"
+                            onClick={() => setMobileMenuOpen(false)}
+                        ></div>
+
+                        {/* Mobile Menu */}
+                        <div className="absolute top-full left-0 right-0 mt-4 mx-2 p-6 bg-white/95 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-pista/20 animate-[fadeIn_0.3s_ease-out] md:hidden z-50 flex flex-col gap-2">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="py-4 px-6 text-lg font-bold text-text-muted hover:text-pista-dark hover:bg-pista-light/10 transition-all duration-300 rounded-xl flex justify-between items-center group"
+                                    className="py-4 px-6 text-lg font-bold text-text hover:text-pista-dark hover:bg-pista-light/20 transition-all duration-300 rounded-xl flex justify-between items-center group"
                                 >
                                     {link.name}
                                     <span className="w-1.5 h-1.5 bg-pista-dark rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>

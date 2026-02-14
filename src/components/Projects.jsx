@@ -53,7 +53,7 @@ const Projects = () => {
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">04 // WORKS</span>
                         <div className="h-px w-8 md:w-16 bg-pista-dark"></div>
                     </div>
-                    <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    <h2 className="text-3xl md:text-6xl lg:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         SELECTED <span className="text-pista-dark">PROJECTS</span>
                     </h2>
                 </div>

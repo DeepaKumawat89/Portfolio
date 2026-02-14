@@ -18,7 +18,7 @@ const About = () => {
                         <span className="text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">02 // PROFILE</span>
                         <div className="h-px w-16 bg-pista-dark"></div>
                     </div>
-                    <h2 className="text-6xl md:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    <h2 className="text-4xl md:text-8xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         About <span className="text-pista-dark">me</span>
                     </h2>
                 </div>

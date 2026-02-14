@@ -27,7 +27,7 @@ const Skills = () => {
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] text-pista-dark/60">Professional Tech Stack</span>
                         <div className="h-px w-8 md:w-12 bg-pista-dark/20"></div>
                     </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-text tracking-tighter uppercase animate-[fadeInUp_0.8s_ease-out] whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-text tracking-tighter uppercase animate-[fadeInUp_0.8s_ease-out] whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         Technical <span className="text-pista-dark">Expertise</span>
                     </h2>
                 </div>
