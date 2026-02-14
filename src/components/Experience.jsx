@@ -15,7 +15,8 @@ const Experience = () => {
             description: 'Engineering precision RFID solutions for warehouse logistics, focusing on long-range material tracking and structural inventory optimization.',
             fullDescription: 'Developed advanced RFID-based warehouse management system using Flutter and Dart, enabling real-time inventory tracking with 30-meter scan range capability. Integrated RFID SDK for seamless hardware communication and implemented efficient data synchronization algorithms. Created intuitive mobile interface for warehouse staff to manage inventory operations, reducing manual data entry by 85%. Optimized app performance for industrial environments with offline-first architecture and background sync capabilities. Collaborated with hardware engineering team to calibrate RFID readers and troubleshoot integration issues.',
             stack: ['Flutter', 'RFID SDK', 'Dart'],
-            metric: '30M SCAN RANGE'
+            metric: '30M SCAN RANGE',
+            image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=600&fit=crop'
         },
         {
             id: '02',
@@ -27,7 +28,8 @@ const Experience = () => {
             description: 'Developing reactive management ecosystems for visitor and maintenance coordination, implementing high-performance API bridges.',
             fullDescription: 'Built comprehensive visitor management and maintenance coordination system using Flutter, Spring Boot, and GetX state management. Developed RESTful API integrations for real-time visitor check-in/check-out tracking and maintenance request workflows. Implemented reactive UI patterns with GetX for seamless state management across the application. Created notification system for instant alerts on visitor arrivals and maintenance updates. Achieved 95% crash-free rate through comprehensive error handling and testing. Optimized API response times and implemented efficient caching strategies for improved performance.',
             stack: ['Flutter', 'Spring Boot', 'GetX'],
-            metric: '95% CRASH-FREE'
+            metric: '95% CRASH-FREE',
+            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop'
         }
     ];
 
@@ -72,69 +74,87 @@ const Experience = () => {
                 </div>
 
                 {/* Grid Layout - Single Column on Mobile */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6 max-w-6xl mx-auto">
                     {experiences.map((exp, index) => (
                         <div
                             key={index}
                             onClick={() => setSelectedExperience(exp)}
-                            className="group relative bg-white rounded-2xl md:rounded-[2rem] p-3 md:p-8 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards] cursor-pointer"
+                            className="group relative bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards] cursor-pointer"
                             style={{ animationDelay: `${index * 0.15 + 0.4}s` }}
                         >
-                            {/* Inner Kinetic Gradient Blobs */}
-                            <div className="absolute -top-10 -right-10 w-32 h-32 md:w-48 md:h-48 bg-pista/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
-
-                            <div className="relative z-10 space-y-3 md:space-y-6">
-                                {/* Header: Category & Period */}
-                                <div className="flex justify-between items-center">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-pista-dark"></div>
-                                        <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-pista-dark/60">{exp.category}</span>
+                            {/* Split Layout Container */}
+                            <div className="flex flex-col h-full">
+                                {/* Top Half - Image */}
+                                <div className="relative w-full h-48 md:h-56 overflow-hidden">
+                                    <img
+                                        src={exp.image}
+                                        alt={exp.company}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    {/* Image Overlay with Experience ID */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                                    <div className="absolute top-4 left-4 text-6xl md:text-7xl font-black text-white/20 select-none group-hover:text-white/30 transition-colors">
+                                        {exp.id}
                                     </div>
-                                    <span className="text-[10px] md:text-xs font-bold text-text-light italic">{exp.period}</span>
-                                </div>
-
-                                {/* Title & Role */}
-                                <div className="space-y-4">
-                                    <div className="text-5xl md:text-6xl font-black text-pista-dark/5 absolute -top-4 -left-2 select-none group-hover:text-pista-dark/15 transition-colors">{exp.id}</div>
-                                    <h3 className="text-base md:text-4xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300">
-                                        {exp.role}
-                                    </h3>
-                                    <div className="flex flex-wrap items-center gap-3">
-                                        <span className="text-sm md:text-xl font-bold text-text">{exp.company}</span>
-                                        <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-pista"></span>
-                                        <span className="w-full md:w-auto text-[10px] font-black text-pista-dark uppercase tracking-widest">{exp.location}</span>
-                                    </div>
-                                    <p className="text-sm md:text-base text-text-muted leading-relaxed opacity-80">
-                                        {exp.description}
-                                    </p>
-                                    <div className="text-xs text-pista-dark font-semibold mt-2 flex items-center gap-1">
-                                        <span>Click for full details</span>
-                                        <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                {/* Stack Pills */}
-                                <div className="flex flex-wrap gap-1.5 pt-1">
-                                    {exp.stack.map((tag, i) => (
-                                        <span key={i} className="text-[7px] md:text-[9px] font-bold text-text-muted bg-[#FFFBF5] px-2 md:px-5 py-1 md:py-2 rounded-full border border-pista/20 group-hover:border-pista-dark/30 transition-colors uppercase tracking-tight">
-                                            {tag}
+                                    {/* Category Badge */}
+                                    <div className="absolute top-4 right-4 flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-pista-dark"></div>
+                                        <span className="text-[8px] md:text-[9px] font-black uppercase tracking-widest text-white bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                                            {exp.category}
                                         </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Footer Metrics & Kinetic Link */}
-                            <div className="relative z-10 mt-4 md:mt-8 flex items-end justify-between border-t border-pista/10 pt-3 md:pt-6">
-                                <div className="space-y-0.5">
-                                    <div className="text-[7px] md:text-[10px] font-black text-pista-dark/40 uppercase tracking-widest">metric</div>
-                                    <div className="text-sm md:text-xl font-black text-text tracking-tighter italic">
-                                        {exp.metric}
                                     </div>
                                 </div>
-                                <div className="w-8 h-8 md:w-14 md:h-14 bg-text rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 shadow-xl group-hover:bg-pista-dark">
-                                    <svg width="14" height="14" md:width="24" md:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+
+                                {/* Bottom Half - Content */}
+                                <div className="relative flex-1 p-5 md:p-6 flex flex-col justify-between">
+                                    {/* Inner Kinetic Gradient Blob */}
+                                    <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-pista/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
+
+                                    <div className="relative z-10 space-y-3 md:space-y-4">
+                                        {/* Role & Period */}
+                                        <div className="flex justify-between items-start gap-2">
+                                            <h3 className="text-lg md:text-xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300 leading-tight">
+                                                {exp.role}
+                                            </h3>
+                                            <span className="text-xs font-bold text-text-light italic whitespace-nowrap">{exp.period}</span>
+                                        </div>
+
+                                        {/* Company & Location */}
+                                        <div className="flex flex-wrap items-center gap-2">
+                                            <span className="text-sm md:text-base font-bold text-text">{exp.company}</span>
+                                            <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-pista"></span>
+                                            <span className="text-[9px] md:text-[10px] font-black text-pista-dark uppercase tracking-widest">{exp.location}</span>
+                                        </div>
+
+                                        {/* Description */}
+                                        <p className="text-[11px] md:text-sm text-text-muted leading-relaxed line-clamp-3">
+                                            {exp.description}
+                                        </p>
+
+                                        {/* Tech Stack Pills */}
+                                        <div className="flex flex-wrap gap-1.5 pt-1">
+                                            {exp.stack.map((tag, i) => (
+                                                <span key={i} className="text-[8px] md:text-[9px] font-bold text-text-muted bg-[#FFFBF5] px-3 py-1.5 rounded-full border border-pista/20 group-hover:border-pista-dark/30 transition-colors uppercase tracking-tight">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Footer - Metric & Action Icon */}
+                                    <div className="relative z-10 mt-4 flex items-end justify-between border-t border-pista/10 pt-4">
+                                        <div className="space-y-0.5">
+                                            <div className="text-[8px] md:text-[9px] font-black text-pista-dark/40 uppercase tracking-widest">metric</div>
+                                            <div className="text-xs md:text-sm font-black text-text tracking-tighter italic">
+                                                {exp.metric}
+                                            </div>
+                                        </div>
+                                        <div className="w-10 h-10 md:w-12 md:h-12 bg-text rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 shadow-xl group-hover:bg-pista-dark">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                                <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
