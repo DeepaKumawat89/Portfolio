@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Color Palette Reference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #22c55e, #84cc16);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+        }
+
+        .color-card {
+            text-align: center;
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 120px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 3px solid white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .color-card:hover .color-swatch {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .color-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .color-rgb {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        .gradient-preview {
+            margin-top: 32px;
+            padding: 40px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #22c55e, #84cc16, #a3e635);
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio Color Palette</h1>
+        <p class="subtitle">Green, Pista, White & Cream Theme</p>
+
+        <div class="section">
+            <h2 class="section-title">🌿 Primary Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #22c55e;"></div>
+                    <div class="color-name">Primary Green</div>
+                    <div class="color-hex">#22c55e</div>
+                    <div class="color-rgb">rgb(34, 197, 94)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #84cc16;"></div>
+                    <div class="color-name">Secondary Lime</div>
+                    <div class="color-hex">#84cc16</div>
+                    <div class="color-rgb">rgb(132, 204, 22)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #a3e635;"></div>
+                    <div class="color-name">Accent Green</div>
+                    <div class="color-hex">#a3e635</div>
+                    <div class="color-rgb">rgb(163, 230, 53)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #d4e157;"></div>
+                    <div class="color-name">Pista</div>
+                    <div class="color-hex">#d4e157</div>
+                    <div class="color-rgb">rgb(212, 225, 87)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #e6ee9c;"></div>
+                    <div class="color-name">Pista Light</div>
+                    <div class="color-hex">#e6ee9c</div>
+                    <div class="color-rgb">rgb(230, 238, 156)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🤍 Neutral Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #fef9f3; border: 2px solid #e5e7eb;"></div>
+                    <div class="color-name">Cream</div>
+                    <div class="color-hex">#fef9f3</div>
+                    <div class="color-rgb">rgb(254, 249, 243)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #f5e6d3; border: 2px solid #e5e7eb;"></div>
+                    <div class="color-name">Cream Dark</div>
+                    <div class="color-hex">#f5e6d3</div>
+                    <div class="color-rgb">rgb(245, 230, 211)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #b8c5b8;"></div>
+                    <div class="color-name">Text Muted</div>
+                    <div class="color-hex">#b8c5b8</div>
+                    <div class="color-rgb">rgb(184, 197, 184)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🌑 Dark Surfaces</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #0a0f0a;"></div>
+                    <div class="color-name">Background</div>
+                    <div class="color-hex">#0a0f0a</div>
+                    <div class="color-rgb">rgb(10, 15, 10)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #1a1f1a;"></div>
+                    <div class="color-name">Surface</div>
+                    <div class="color-hex">#1a1f1a</div>
+                    <div class="color-rgb">rgb(26, 31, 26)</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: #252d25;"></div>
+                    <div class="color-name">Surface Hover</div>
+                    <div class="color-hex">#252d25</div>
+                    <div class="color-rgb">rgb(37, 45, 37)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gradient-preview">
+            Primary → Secondary → Accent Gradient
+        </div>
+    </div>
+</body>
+</html>
