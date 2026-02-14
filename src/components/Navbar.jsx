@@ -76,7 +76,7 @@ const Navbar = () => {
                     <>
                         {/* Backdrop Overlay with Blur */}
                         <div
-                            className="fixed inset-0 bg-black/50 backdrop-blur-md z-30 md:hidden animate-[fadeIn_0.3s_ease-out]"
+                            className="fixed top-20 left-0 right-0 bottom-0 bg-black/50 backdrop-blur-md z-30 md:hidden animate-[fadeIn_0.3s_ease-out]"
                             onClick={() => setMobileMenuOpen(false)}
                         ></div>
 
