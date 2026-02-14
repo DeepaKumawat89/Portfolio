@@ -61,7 +61,7 @@ const Navbar = () => {
                 {/* Mobile Menu Button */}
                 <button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="md:hidden w-10 h-10 flex items-center justify-center text-text hover:text-pista-dark transition-all duration-300 rounded-full hover:bg-pista-light/20 relative z-50 bg-white/50 backdrop-blur-sm"
+                    className="md:hidden w-10 h-10 flex items-center justify-center text-text hover:text-pista-dark transition-all duration-300 rounded-full hover:bg-pista-light/20 relative z-50 bg-white/50"
                     aria-label="Toggle menu"
                 >
                     {mobileMenuOpen ? (
@@ -74,7 +74,7 @@ const Navbar = () => {
                 {/* Mobile Menu Dropdown */}
                 {mobileMenuOpen && (
                     <>
-                        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden" onClick={() => setMobileMenuOpen(false)}></div>
+                        <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)}></div>
                         <div className="absolute top-full left-0 right-0 mt-4 mx-2 p-6 glass rounded-[2rem] shadow-2xl border-white/40 animate-[fadeIn_0.3s_ease-out] md:hidden z-50 flex flex-col gap-2">
                             {navLinks.map((link) => (
                                 <a
