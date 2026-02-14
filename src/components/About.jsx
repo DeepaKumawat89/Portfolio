@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section id="about" className="relative py-32 bg-[#FFFBF5] overflow-hidden">
+        <section id="about" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-[15%] w-px h-full bg-pista/20"></div>
@@ -12,7 +12,7 @@ const About = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section Header */}
-                <div className="mb-12 space-y-4 text-center">
+                <div className="mb-8 md:mb-12 space-y-4 text-center">
                     <div className="flex items-center justify-center gap-4 animate-[fadeIn_0.6s_ease-out]">
                         <div className="h-px w-16 bg-pista-dark"></div>
                         <span className="text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">02 // PROFILE</span>
@@ -24,7 +24,7 @@ const About = () => {
                 </div>
 
                 {/* Narrative Text Outside Cards */}
-                <div className="max-w-5xl mx-auto mb-20 text-center space-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="max-w-5xl mx-auto mb-12 text-center space-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                     <p className="text-lg md:text-2xl font-medium text-text-muted leading-relaxed text-justify max-w-5xl mx-auto px-4 md:px-0" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         I am a dedicated developer who focuses on building structured, efficient, and scalable digital solutions. I combine strong problem-solving skills with a user-first approach to ensure that every application I create is both technically sound and easy to use. I believe in writing clean, maintainable code that supports long-term growth and performance.
                     </p>

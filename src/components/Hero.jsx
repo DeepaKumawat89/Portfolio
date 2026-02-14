@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-32 md:pt-20 bg-[#FFFBF5] overflow-hidden">
+        <section className="relative min-h-screen flex items-center bg-[#FFFBF5] overflow-hidden">
             {/* Architectural Background Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-[15%] w-px h-full bg-pista/20"></div>
@@ -10,7 +10,7 @@ const Hero = () => {
                 <div className="absolute top-[40%] left-0 w-full h-px bg-pista/20"></div>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 pb-20 md:pb-0">
+            <div className="container mx-auto px-6 relative z-10 pb-8 md:pb-0">
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12 md:gap-24">
 
                     {/* Left: Content */}

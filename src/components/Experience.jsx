@@ -27,7 +27,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="relative py-20 md:py-32 bg-[#FFFBF5] overflow-hidden">
+        <section id="experience" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-[15%] w-px h-full bg-pista/20"></div>
@@ -37,7 +37,7 @@ const Experience = () => {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 {/* Section Header */}
-                <div className="mb-12 md:mb-20 space-y-4 text-center text-balance">
+                <div className="mb-4 md:mb-6 space-y-4 text-center text-balance">
                     <div className="flex items-center justify-center gap-4 animate-[fadeIn_0.6s_ease-out]">
                         <div className="h-px w-8 md:w-16 bg-pista-dark"></div>
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">03 // CAREER</span>
@@ -49,7 +49,7 @@ const Experience = () => {
                 </div>
 
                 {/* Narrative Text Outside Cards */}
-                <div className="max-w-3xl mx-auto mb-12 md:mb-20 text-center animate-[fadeInUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="max-w-3xl mx-auto mb-8 md:mb-12 text-center animate-[fadeInUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                     <p className="text-lg md:text-2xl font-bold text-text-muted leading-relaxed italic opacity-60 px-4 md:px-0" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         "Engineering precision at the intersection of logistics and logic."
                     </p>
@@ -67,17 +67,17 @@ const Experience = () => {
                 </div>
 
                 {/* Grid Layout - Matching Projects Style */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10 max-w-6xl mx-auto">
                     {experiences.map((exp, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]"
+                            className="group relative bg-white rounded-2xl md:rounded-[2.5rem] p-4 md:p-12 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]"
                             style={{ animationDelay: `${index * 0.15 + 0.4}s` }}
                         >
                             {/* Inner Kinetic Gradient Blobs */}
                             <div className="absolute -top-10 -right-10 w-32 h-32 md:w-48 md:h-48 bg-pista/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
 
-                            <div className="relative z-10 space-y-6 md:space-y-10">
+                            <div className="relative z-10 space-y-4 md:space-y-10">
                                 {/* Header: Category & Period */}
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-3">
@@ -90,11 +90,11 @@ const Experience = () => {
                                 {/* Title & Role */}
                                 <div className="space-y-4">
                                     <div className="text-5xl md:text-6xl font-black text-pista-dark/5 absolute -top-4 -left-2 select-none group-hover:text-pista-dark/15 transition-colors">{exp.id}</div>
-                                    <h3 className="text-2xl md:text-4xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300">
+                                    <h3 className="text-base md:text-4xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300">
                                         {exp.role}
                                     </h3>
                                     <div className="flex flex-wrap items-center gap-3">
-                                        <span className="text-lg md:text-xl font-bold text-text">{exp.company}</span>
+                                        <span className="text-sm md:text-xl font-bold text-text">{exp.company}</span>
                                         <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-pista"></span>
                                         <span className="w-full md:w-auto text-[10px] font-black text-pista-dark uppercase tracking-widest">{exp.location}</span>
                                     </div>
@@ -104,9 +104,9 @@ const Experience = () => {
                                 </div>
 
                                 {/* Stack Pills */}
-                                <div className="flex flex-wrap gap-2 pt-2">
+                                <div className="flex flex-wrap gap-1.5 pt-1">
                                     {exp.stack.map((tag, i) => (
-                                        <span key={i} className="text-[9px] font-bold text-text-muted bg-[#FFFBF5] px-4 md:px-5 py-2 rounded-full border border-pista/20 group-hover:border-pista-dark/30 transition-colors uppercase tracking-tight">
+                                        <span key={i} className="text-[7px] md:text-[9px] font-bold text-text-muted bg-[#FFFBF5] px-2 md:px-5 py-1 md:py-2 rounded-full border border-pista/20 group-hover:border-pista-dark/30 transition-colors uppercase tracking-tight">
                                             {tag}
                                         </span>
                                     ))}
@@ -114,15 +114,15 @@ const Experience = () => {
                             </div>
 
                             {/* Footer Metrics & Kinetic Link */}
-                            <div className="relative z-10 mt-8 md:mt-12 flex items-end justify-between border-t border-pista/10 pt-6 md:pt-8">
-                                <div className="space-y-1">
-                                    <div className="text-[8px] md:text-[10px] font-black text-pista-dark/40 uppercase tracking-widest">PERFORMANCE metric</div>
-                                    <div className="text-lg md:text-xl font-black text-text tracking-tighter italic">
+                            <div className="relative z-10 mt-6 md:mt-12 flex items-end justify-between border-t border-pista/10 pt-4 md:pt-8">
+                                <div className="space-y-0.5">
+                                    <div className="text-[7px] md:text-[10px] font-black text-pista-dark/40 uppercase tracking-widest">metric</div>
+                                    <div className="text-sm md:text-xl font-black text-text tracking-tighter italic">
                                         {exp.metric}
                                     </div>
                                 </div>
-                                <div className="w-12 h-12 md:w-14 md:h-14 bg-text rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 shadow-xl group-hover:bg-pista-dark">
-                                    <svg width="20" height="20" md:width="24" md:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                                <div className="w-8 h-8 md:w-14 md:h-14 bg-text rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 shadow-xl group-hover:bg-pista-dark">
+                                    <svg width="14" height="14" md:width="24" md:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                                 </div>
                             </div>
                         </div>

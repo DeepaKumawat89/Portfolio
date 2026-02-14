@@ -18,10 +18,10 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="relative py-20 md:py-32 bg-[#FFFBF5] overflow-hidden">
+        <section id="skills" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12 md:mb-20 space-y-4">
+                <div className="text-center mb-8 md:mb-12 space-y-4">
                     <div className="flex items-center justify-center gap-4 animate-[fadeIn_0.6s_ease-out]">
                         <div className="h-px w-8 md:w-12 bg-pista-dark/20"></div>
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] text-pista-dark/60">Professional Tech Stack</span>

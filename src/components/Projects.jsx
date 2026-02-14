@@ -32,7 +32,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="relative py-32 bg-[#FFFBF5] overflow-hidden">
+        <section id="projects" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-[15%] w-px h-full bg-pista/20"></div>
@@ -41,7 +41,7 @@ const Projects = () => {
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="mb-12 md:mb-20 space-y-4 text-center">
+                <div className="mb-8 md:mb-12 space-y-4 text-center">
                     <div className="flex items-center justify-center gap-4 animate-[fadeIn_0.6s_ease-out]">
                         <div className="h-px w-8 md:w-16 bg-pista-dark"></div>
                         <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.5em] text-pista-dark">04 // WORKS</span>
@@ -52,23 +52,23 @@ const Projects = () => {
                     </h2>
                 </div>
 
-                {/* 3-Column Rounded Card Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                {/* 2-Column Rounded Card Grid on Mobile */}
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10">
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-6 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]"
+                            className="group relative bg-white rounded-2xl md:rounded-[2.5rem] p-4 md:p-10 flex flex-col justify-between border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-6 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]"
                             style={{ animationDelay: `${index * 0.15}s` }}
                         >
                             {/* Inner Kinetic Gradient Blobs */}
                             <div className="absolute -top-10 -right-10 w-32 h-32 bg-pista/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
 
-                            <div className="relative z-10 space-y-8">
+                            <div className="relative z-10 space-y-4 md:space-y-8">
                                 {/* Header: Category & Year */}
                                 <div className="flex justify-between items-center">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-pista-dark"></div>
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-pista-dark/60">{project.category}</span>
+                                    <div className="flex items-center gap-2 md:gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-pista-dark"></div>
+                                        <span className="text-[7px] md:text-[10px] font-black uppercase tracking-widest text-pista-dark/60">{project.category}</span>
                                     </div>
                                     <span className="text-xs font-bold text-text-light italic">{project.year}</span>
                                 </div>
@@ -76,18 +76,18 @@ const Projects = () => {
                                 {/* Title & Main Info */}
                                 <div className="space-y-4">
                                     <div className="text-5xl font-black text-pista-dark/5 absolute -top-4 -left-2 select-none group-hover:text-pista-dark/15 transition-colors">{project.id}</div>
-                                    <h3 className="text-3xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300">
+                                    <h3 className="text-base md:text-3xl font-bold text-text group-hover:text-pista-dark transition-colors duration-300">
                                         {project.title}
                                     </h3>
-                                    <p className="text-base text-text-muted leading-relaxed">
+                                    <p className="text-[11px] md:text-base text-text-muted leading-relaxed line-clamp-3 md:line-clamp-none">
                                         {project.description}
                                     </p>
                                 </div>
 
                                 {/* Tech Stack Pill Display */}
-                                <div className="flex flex-wrap gap-2 pt-2">
+                                <div className="flex flex-wrap gap-1.5 pt-1">
                                     {project.stack.map((tag, i) => (
-                                        <span key={i} className="text-[9px] font-bold text-text-muted bg-[#FFFBF5] px-4 py-2 rounded-full border border-pista/20 group-hover:border-pista-dark/30 transition-colors">
+                                        <span key={i} className="text-[7px] md:text-[9px] font-bold text-text-muted bg-[#FFFBF5] px-2 md:px-4 py-1.5 md:py-2 rounded-full border border-pista/20 group-hover:border-pista-dark/30 transition-colors">
                                             {tag}
                                         </span>
                                     ))}
@@ -95,15 +95,15 @@ const Projects = () => {
                             </div>
 
                             {/* Footer Metrics & Kinetic Link */}
-                            <div className="relative z-10 mt-12 flex items-end justify-between border-t border-pista/10 pt-8">
-                                <div className="space-y-1">
-                                    <div className="text-[10px] font-black text-pista-dark/40 uppercase tracking-widest">PERFORMANCE metric</div>
-                                    <div className="text-lg font-black text-text tracking-tighter">
+                            <div className="relative z-10 mt-6 md:mt-12 flex items-end justify-between border-t border-pista/10 pt-4 md:pt-8">
+                                <div className="space-y-0.5">
+                                    <div className="text-[7px] md:text-[10px] font-black text-pista-dark/40 uppercase tracking-widest">metric</div>
+                                    <div className="text-xs md:text-lg font-black text-text tracking-tighter">
                                         {project.metric}
                                     </div>
                                 </div>
-                                <div className="w-14 h-14 bg-text rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 shadow-xl group-hover:bg-pista-dark">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                                <div className="w-8 h-8 md:w-14 md:h-14 bg-text rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 shadow-xl group-hover:bg-pista-dark">
+                                    <svg width="14" height="14" md:width="24" md:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                                 </div>
                             </div>
                         </div>
