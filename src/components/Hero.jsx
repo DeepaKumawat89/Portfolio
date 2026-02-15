@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center bg-[#FFFBF5] overflow-hidden">
+        <section className="relative min-h-screen flex items-center overflow-hidden">
             {/* Decorative Background Shapes */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Top Right - Rotated Square */}

@@ -143,7 +143,7 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Tapestry&display=swap');
 
 :root {
   --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

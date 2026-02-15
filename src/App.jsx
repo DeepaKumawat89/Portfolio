@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import GlobalBackground from './components/GlobalBackground';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -11,7 +12,8 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-cream text-text selection:bg-pista/20 selection:text-pista scroll-smooth">
+    <div className="relative min-h-screen text-text selection:bg-pista/20 selection:text-pista scroll-smooth">
+      <GlobalBackground />
       <Navbar />
       <main>
         <Hero />

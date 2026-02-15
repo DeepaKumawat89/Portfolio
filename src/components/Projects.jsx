@@ -7,24 +7,24 @@ const Projects = () => {
     const projects = [
         {
             id: '01',
-            category: 'FULL-STACK E-COMMERCE',
-            title: 'E-Commerce Platform',
-            year: '2024',
-            description: 'Full-stack e-commerce application with product catalog, shopping cart, and secure checkout functionality.',
-            fullDescription: 'Developed a comprehensive e-commerce platform using React for frontend and Spring Boot for backend services. Implemented product catalog management with search and filter capabilities, shopping cart functionality with real-time updates, and secure checkout process. Integrated MySQL database for data persistence and RESTful APIs for seamless frontend-backend communication. Created responsive UI with modern design patterns and optimized performance through code splitting and lazy loading. Implemented user authentication and authorization using JWT tokens. Added admin dashboard for product and order management.',
-            stack: ['React', 'Spring Boot', 'MySQL'],
-            metric: 'FULL-STACK',
+            category: 'MOBILE ENGINEERING',
+            title: 'E-Commerce App',
+            year: 'Jan 2025',
+            description: 'Built a scalable e-commerce application using Flutter for cross-platform (Android/iOS) functionality and a consistent, responsive user interface.',
+            fullDescription: 'Integrated Google’s Firebase backend services for secure Authentication (login/signup), real-time data handling with Firestore (products, orders), and user profile management.',
+            stack: ['Flutter', 'Dart', 'Firebase'],
+            metric: 'CROSS-PLATFORM',
             image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop'
         },
         {
             id: '02',
             category: 'AI & COMPUTER VISION',
-            title: 'Vision Assistive AI',
-            year: '2024',
-            description: 'AI-powered assistive technology for visually impaired users using computer vision and edge computing.',
-            fullDescription: 'Developed an intelligent assistive system for visually impaired individuals using NVIDIA Jetson platform for edge computing. Implemented real-time object detection and scene interpretation using Python and computer vision libraries. Created low-latency processing pipeline achieving 45ms response time for critical object recognition tasks. Integrated text-to-speech functionality for audio feedback on detected objects and obstacles. Utilized deep learning models optimized for edge deployment with TensorRT acceleration. Designed intuitive audio interface for seamless user interaction without visual feedback.',
-            stack: ['Python', 'NVIDIA Jetson', 'OpenCV'],
-            metric: '45ms LATENCY',
+            title: 'AI-Powered Assistive System',
+            year: 'July 2024',
+            description: 'Developed an AI-powered assistive system for the visually impaired with real-time object detection, face recognition, and text-to-speech capabilities.',
+            fullDescription: 'Integrated features like currency detection, weather updates, and voice commands for hands-free interaction. Deployed on NVIDIA Jetson Xavier NX with GPU acceleration, achieving 90% accuracy in real-time scene analysis and audio feedback.',
+            stack: ['Python', 'NVIDIA Jetson', 'PyCharm'],
+            metric: '90% ACCURACY',
             image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop'
         },
         {
@@ -37,11 +37,44 @@ const Projects = () => {
             stack: ['Flutter', 'Firebase', 'IoT Sensors'],
             metric: '1st PRIZE',
             image: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&h=600&fit=crop'
+        },
+        {
+            id: '04',
+            category: 'UI/UX DESIGN',
+            title: 'Modern Portfolio V1',
+            year: '2023',
+            description: 'Minimalist architectural portfolio design focusing on smooth animations and technical precision.',
+            fullDescription: 'Designed and developed a personal portfolio using React and Tailwind CSS, following a technical/architectural aesthetic. Implemented custom glassmorphism components and fluid background animations. Optimized for mobile responsiveness and SEO best practices.',
+            stack: ['React', 'Tailwind', 'Framer Motion'],
+            metric: 'TECHNICAL UI',
+            image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&h=600&fit=crop'
+        },
+        {
+            id: '05',
+            category: 'BACKEND SYSTEMS',
+            title: 'API Gateway Service',
+            year: '2024',
+            description: 'Microservices gateway with rate limiting, logging, and automated documentation.',
+            fullDescription: 'Built a robust API Gateway using Node.js and Express to manage microservices communication. Implemented Redis-based rate limiting and Winston logging for monitoring. Automated API documentation using Swagger UI.',
+            stack: ['Node.js', 'Redis', 'Express'],
+            metric: '<10ms OVERHEAD',
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop'
+        },
+        {
+            id: '06',
+            category: 'MOBILE ENGINEERING',
+            title: 'Inventory Sync App',
+            year: '2023',
+            description: 'Enterprise-grade offline-first mobile app for real-time inventory synchronization.',
+            fullDescription: 'Developed an offline-first mobile application using Flutter and SQLite. Implemented background sync workers and conflict resolution logic for multi-user inventory management.',
+            stack: ['Flutter', 'SQLite', 'Riverpod'],
+            metric: 'OFFLINE-FIRST',
+            image: 'https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?w=800&h=600&fit=crop'
         }
     ];
 
     return (
-        <section id="projects" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
+        <section id="projects" className="relative py-12 md:py-16 overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-[15%] w-px h-full bg-pista/20"></div>
@@ -61,8 +94,8 @@ const Projects = () => {
                     </h2>
                 </div>
 
-                {/* Single Column on Mobile, 3 Columns on Desktop */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-6">
+                {/* Single Column on Mobile, 2 on Tablet, 3 on Desktop */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                     {projects.map((project, index) => (
                         <div
                             key={index}

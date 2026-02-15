@@ -10,23 +10,23 @@ const Experience = () => {
             category: 'INDUSTRIAL SYSTEMS',
             company: 'Zanver Group of Industries',
             role: 'Flutter Developer Intern',
-            period: '2024 – 2025',
+            period: 'Aug 2024 – June 2025',
             location: 'Kolhapur',
-            description: 'Engineering precision RFID solutions for warehouse logistics, focusing on long-range material tracking and structural inventory optimization.',
-            fullDescription: 'Developed advanced RFID-based warehouse management system using Flutter and Dart, enabling real-time inventory tracking with 30-meter scan range capability. Integrated RFID SDK for seamless hardware communication and implemented efficient data synchronization algorithms. Created intuitive mobile interface for warehouse staff to manage inventory operations, reducing manual data entry by 85%. Optimized app performance for industrial environments with offline-first architecture and background sync capabilities. Collaborated with hardware engineering team to calibrate RFID readers and troubleshoot integration issues.',
+            description: 'Developed a mobile application using Flutter for RFID-based Pattern Box Searching with the Chainway C72 UHF RFID Reader.',
+            fullDescription: 'Integrated the app with the Chainway C72 RFID Reader device using its official SDK to enable long-range (up to 30m) RFID tag scanning for accurate pattern box detection. Enhanced inventory and warehouse operations through real-time RFID reading and seamless hardware integration.',
             stack: ['Flutter', 'RFID SDK', 'Dart'],
-            metric: '30M SCAN RANGE',
+            metric: '30M RANGE SCAN',
             image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=600&fit=crop'
         },
         {
             id: '02',
             category: 'ENTERPRISE SOLUTIONS',
-            company: 'Siddham Innovation Center',
+            company: 'Siddham Innovation and Business Incubation Center',
             role: 'Flutter Developer Intern',
-            period: '2024',
+            period: 'Apr 2024 – Dec 2024',
             location: 'Kolhapur',
-            description: 'Developing reactive management ecosystems for visitor and maintenance coordination, implementing high-performance API bridges.',
-            fullDescription: 'Built comprehensive visitor management and maintenance coordination system using Flutter, Spring Boot, and GetX state management. Developed RESTful API integrations for real-time visitor check-in/check-out tracking and maintenance request workflows. Implemented reactive UI patterns with GetX for seamless state management across the application. Created notification system for instant alerts on visitor arrivals and maintenance updates. Achieved 95% crash-free rate through comprehensive error handling and testing. Optimized API response times and implemented efficient caching strategies for improved performance.',
+            description: 'Built a Flutter application for Sibic to manage visitor details, maintenance, and bills, involving planning, coding, and testing.',
+            fullDescription: 'Implemented RESTful API integration between the mobile app and Spring Boot backend, achieving 95% crash-free execution. Used GetX for efficient state management, ensuring a streamlined development process and responsive UI.',
             stack: ['Flutter', 'Spring Boot', 'GetX'],
             metric: '95% CRASH-FREE',
             image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop'
@@ -34,7 +34,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
+        <section id="experience" className="relative py-12 md:py-16 overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-[15%] w-px h-full bg-pista/20"></div>
@@ -74,7 +74,7 @@ const Experience = () => {
                 </div>
 
                 {/* Grid Layout - Single Column on Mobile */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
                     {experiences.map((exp, index) => (
                         <div
                             key={index}

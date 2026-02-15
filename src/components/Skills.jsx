@@ -18,17 +18,17 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
+        <section id="skills" className="relative py-12 md:py-16 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-8 md:mb-12 space-y-4">
                     <div className="flex items-center justify-center gap-4 animate-[fadeIn_0.6s_ease-out]">
-                        <div className="h-px w-8 md:w-12 bg-pista-dark/20"></div>
-                        <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] text-pista-dark/60"> 05 // Professional Tech Stack</span>
-                        <div className="h-px w-8 md:w-12 bg-pista-dark/20"></div>
+                        <div className="h-px w-8 md:w-12 bg-pista-dark"></div>
+                        <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] text-pista-dark"> 05 // Professional Tech Stack</span>
+                        <div className="h-px w-8 md:w-12 bg-pista-dark"></div>
                     </div>
                     <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-text tracking-tighter uppercase animate-[fadeInUp_0.8s_ease-out] whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                        Technical <span className="text-pista-dark">Expertise</span>
+                        Technical <span className="text-pista-dark">Skills</span>
                     </h2>
                 </div>
 

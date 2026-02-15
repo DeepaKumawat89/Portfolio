@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section id="about" className="relative py-12 md:py-16 bg-[#FFFBF5] overflow-hidden">
+        <section id="about" className="relative py-12 md:py-16 overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-[15%] w-px h-full bg-pista/20"></div>
@@ -42,13 +42,13 @@ const About = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-text" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         Bachelor of Technology in Computer Science and Engineering
                     </h3>
-                    <p className="text-lg md:text-xl text-pista-dark font-bold tracking-tight">
+                    <p className="text-lg md:text-xl text-pista-dark font-bold tracking-tight" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         2021 — 2025
                     </p>
-                    <p className="text-xl text-text font-medium" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    <p className="text-xl text-text font-medium" style={{ fontFamily: "'Tapestry', serif" }}>
                         D.Y. Patil College of Engineering and Technology, Kolhapur
                     </p>
-                    <p className="text-lg text-text-muted font-bold tracking-widest uppercase">
+                    <p className="text-lg text-text-muted font-bold tracking-widest uppercase" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                         CGPA: <span className="text-pista-dark font-black">7.87/10</span>
                     </p>
                 </div>

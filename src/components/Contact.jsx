@@ -70,7 +70,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-12 md:py-16 bg-[#FFFBF5] relative overflow-hidden">
+        <section id="contact" className="py-12 md:py-16 relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-pista/5 rounded-full blur-[80px] md:blur-[120px] -z-10"></div>
             <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-pista/10 rounded-full blur-[60px] md:blur-[100px] -z-10"></div>
@@ -246,7 +246,7 @@ const Contact = () => {
 
                             {/* Decorative Watermark */}
                             <div className="mt-8 text-right pr-4">
-                                <span className="text-[10px] font-black text-pista-dark/20 uppercase tracking-[0.5em]">2024 System Terminal</span>
+                                <span className="text-[10px] font-black text-pista-dark/20 uppercase tracking-[0.5em]">2026 System Terminal</span>
                             </div>
                         </div>
 
