@@ -1,6 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+    // Form state
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+
+    // GOOGLE FORM CONFIGURATION
+    // Step 1: ✅ Form URL is set (change viewform to formResponse)
+    const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScjYYvHNXpeLx1Ihj9lXfZIki11dv5v_V8IIEskzpv56MYbKg/formResponse";
+
+    // Step 2: ⚠️ REPLACE THESE ENTRY IDs WITH YOUR ACTUAL VALUES
+    // To find entry IDs:
+    // 1. Open your form: https://docs.google.com/forms/d/e/1FAIpQLScjYYvHNXpeLx1Ihj9lXfZIki11dv5v_V8IIEskzpv56MYbKg/viewform
+    // 2. Right-click on Name field → Inspect → Find <input name="entry.XXXXXXXXX">
+    // 3. Copy the number after "entry." and paste below
+    // 4. Repeat for Email, Subject, and Message fields
+    const FORM_FIELDS = {
+        name: "entry.1947188305",      // ✅ Set: Name entry ID
+        email: "entry.1812072245",    // ✅ Set: Email entry ID
+        subject: "entry.834818569",   // ✅ Set: Subject entry ID
+        message: "entry.1261339297"   // ✅ Set: Message entry ID
+    };
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            // Create FormData object for Google Forms
+            const formDataToSend = new FormData();
+            formDataToSend.append(FORM_FIELDS.name, formData.name);
+            formDataToSend.append(FORM_FIELDS.email, formData.email);
+            formDataToSend.append(FORM_FIELDS.subject, formData.subject);
+            formDataToSend.append(FORM_FIELDS.message, formData.message);
+
+            // Submit to Google Forms
+            await fetch(GOOGLE_FORM_ACTION_URL, {
+                method: 'POST',
+                body: formDataToSend,
+                mode: 'no-cors' // Required for Google Forms
+            });
+
+            // Success!
+            setSubmitStatus('success');
+            setFormData({ name: '', email: '', subject: '', message: '' });
+
+            // Clear success message after 5 seconds
+            setTimeout(() => setSubmitStatus(null), 5000);
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section id="contact" className="py-12 md:py-16 bg-[#FFFBF5] relative overflow-hidden">
             {/* Background Decorative Elements */}
@@ -18,7 +86,7 @@ const Contact = () => {
                                     <div className="w-2 h-2 rounded-full bg-pista-dark animate-pulse"></div>
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-pista-dark">Open for Opportunities</span>
                                 </div>
-                                <h2 className="text-4xl md:text-7xl font-bold text-text tracking-tighter uppercase font-outfit whitespace-nowrap">
+                                <h2 className="text-4xl md:text-7xl font-bold text-text tracking-tighter uppercase whitespace-nowrap" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                                     Let's <span className="text-pista-dark">Connect</span>
                                 </h2>
                                 <p className="text-base md:text-lg text-text-muted leading-relaxed max-w-md">
@@ -99,29 +167,77 @@ const Contact = () => {
                                 {/* Subtle inner glow */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-pista/5 to-transparent rounded-[2rem] -z-10"></div>
 
-                                <form className="space-y-6">
+                                <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black uppercase tracking-widest text-text-muted ml-1">Name</label>
-                                            <input type="text" placeholder="John Doe" className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-4 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20" required />
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                placeholder="John Doe"
+                                                className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-4 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20"
+                                                required
+                                            />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black uppercase tracking-widest text-text-muted ml-1">Email</label>
-                                            <input type="email" placeholder="john@example.com" className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-4 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20" required />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder="john@example.com"
+                                                className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-4 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20"
+                                                required
+                                            />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-text-muted ml-1">Subject</label>
-                                        <input type="text" placeholder="Project Inquiry" className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-4 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20" required />
+                                        <input
+                                            type="text"
+                                            name="subject"
+                                            value={formData.subject}
+                                            onChange={handleChange}
+                                            placeholder="Project Inquiry"
+                                            className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-4 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20"
+                                            required
+                                        />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-text-muted ml-1">Message</label>
-                                        <textarea rows="4" placeholder="Let's talk about your vision..." className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-6 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20 resize-none" required></textarea>
+                                        <textarea
+                                            rows="4"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            placeholder="Let's talk about your vision..."
+                                            className="w-full bg-white/60 border border-pista/20 rounded-2xl px-6 py-6 outline-none focus:border-pista-dark focus:ring-4 focus:ring-pista/10 transition-all font-medium text-text placeholder:text-text/20 resize-none"
+                                            required
+                                        ></textarea>
                                     </div>
 
-                                    <button className="w-full py-5 bg-pista-dark text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-text hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden group">
+                                    {/* Success/Error Messages */}
+                                    {submitStatus === 'success' && (
+                                        <div className="bg-pista-dark/10 border border-pista-dark/30 text-pista-dark px-6 py-4 rounded-2xl text-sm font-bold animate-[fadeIn_0.3s_ease-out]">
+                                            ✓ Message sent successfully! I'll get back to you soon.
+                                        </div>
+                                    )}
+                                    {submitStatus === 'error' && (
+                                        <div className="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-2xl text-sm font-bold animate-[fadeIn_0.3s_ease-out]">
+                                            ✗ Something went wrong. Please try again or email me directly.
+                                        </div>
+                                    )}
+
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full py-5 bg-pista-dark text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-text hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                                    >
                                         <span className="relative z-10 flex items-center justify-center gap-3">
-                                            Send Message
+                                            {isSubmitting ? 'Sending...' : 'Send Message'}
                                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" /></svg>
                                         </span>
                                     </button>
