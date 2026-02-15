@@ -107,8 +107,11 @@ const Hero = () => {
                         </div>
 
                         <div className="flex flex-col md:flex-row gap-8 md:gap-24 items-start md:items-center animate-[fadeInUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                            <p className="text-base md:text-lg text-text-muted max-w-sm leading-relaxed border-l-4 border-pista pl-6">
-                                Specialized in <span className="text-text font-bold">Flutter Engineering</span> & System Architecture. Building digital infrastructures that scale.
+                            <p
+                                className="text-base md:text-lg text-text-muted max-w-sm leading-relaxed border-l-4 border-pista pl-6"
+                                style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                            >
+                                Software Engineer with expertise in system design. Building high-performance, scalable solutions.
                             </p>
 
                             <div className="flex flex-col gap-4 md:gap-6">

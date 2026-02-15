@@ -97,6 +97,21 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
                         {/* Divider */}
                         <div className="h-px bg-pista/20"></div>
 
+                        {/* Project/Experience Image */}
+                        {data.image && (
+                            <div className="relative w-full h-[250px] md:h-[450px] rounded-2xl overflow-hidden border border-pista/10 shadow-inner">
+                                <img
+                                    src={data.image}
+                                    alt={data.title || data.role}
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        )}
+
+                        {/* Divider */}
+                        <div className="h-px bg-pista/20"></div>
+
                         {/* Full Description */}
                         <div className="space-y-4">
                             <h2 className="text-2xl md:text-3xl font-bold text-text">Overview</h2>

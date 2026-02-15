@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DetailModal from './DetailModal';
+import ecommerceImg from '../Images/E-Commerce App.png';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -14,7 +15,7 @@ const Projects = () => {
             fullDescription: 'Integrated Google’s Firebase backend services for secure Authentication (login/signup), real-time data handling with Firestore (products, orders), and user profile management.',
             stack: ['Flutter', 'Dart', 'Firebase'],
             metric: 'CROSS-PLATFORM',
-            image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop'
+            image: ecommerceImg
         },
         {
             id: '02',
