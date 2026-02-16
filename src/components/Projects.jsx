@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import DetailModal from './DetailModal';
 import ecommerceImg from '../Images/E-Commerce App.png';
+import assistiveSysImg from '../Images/dd.jpg';
+import recruiterImg from '../Images/Recruiter App.png';
+import todoImg from '../Images/WorkFlow - App.png';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -15,7 +18,8 @@ const Projects = () => {
             fullDescription: 'Integrated Google’s Firebase backend services for secure Authentication (login/signup), real-time data handling with Firestore (products, orders), and user profile management.',
             stack: ['Flutter', 'Dart', 'Firebase'],
             metric: 'CROSS-PLATFORM',
-            image: ecommerceImg
+            image: ecommerceImg,
+            github: 'https://github.com'
         },
         {
             id: '02',
@@ -26,51 +30,32 @@ const Projects = () => {
             fullDescription: 'Integrated features like currency detection, weather updates, and voice commands for hands-free interaction. Deployed on NVIDIA Jetson Xavier NX with GPU acceleration, achieving 90% accuracy in real-time scene analysis and audio feedback.',
             stack: ['Python', 'NVIDIA Jetson', 'PyCharm'],
             metric: '90% ACCURACY',
-            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop'
+            image: assistiveSysImg,
+            github: 'https://github.com'
         },
         {
             id: '03',
-            category: 'IOT & MOBILE APP',
-            title: 'Smart City Parking',
-            year: '2023',
-            description: 'Award-winning smart parking solution with IoT sensors, QR-based verification, and real-time availability tracking.',
-            fullDescription: 'Won 1st prize in hackathon for developing innovative smart parking solution that digitizes urban parking infrastructure. Built Flutter-based cross-platform mobile application for real-time parking spot discovery and reservation. Implemented QR code-based verification system for contactless check-in and check-out. Integrated IoT sensors with Firebase Cloud Functions for automated occupancy detection and real-time updates. Developed admin web dashboard using React for parking management and analytics. Reduced average parking search time by 60% in pilot deployment. Implemented payment gateway integration for seamless transactions.',
-            stack: ['Flutter', 'Firebase', 'IoT Sensors'],
-            metric: '1st PRIZE',
-            image: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&h=600&fit=crop'
+            category: 'MOBILE ENGINEERING',
+            title: 'Recruiter Mobile App',
+            year: '2024',
+            description: 'A dedicated recruiter application for posting internships, assessing candidate profiles, and real-time communication.',
+            fullDescription: 'Developed a recruiter-centric mobile application using Flutter and Firebase. The app enables recruiters to post jobs and internships, review and assessment candidate profiles with detailed skill breakdowns, and engage in real-time chat with potential hires. Implemented efficient state management using Provider for a smooth user experience.',
+            stack: ['Flutter', 'Firebase', 'Dart', 'Provider'],
+            metric: 'STATE MGMT',
+            image: recruiterImg,
+            github: 'https://github.com/DeepaKumawat89/ARMII_Recruiter_app'
         },
         {
             id: '04',
-            category: 'UI/UX DESIGN',
-            title: 'Modern Portfolio V1',
-            year: '2023',
-            description: 'Minimalist architectural portfolio design focusing on smooth animations and technical precision.',
-            fullDescription: 'Designed and developed a personal portfolio using React and Tailwind CSS, following a technical/architectural aesthetic. Implemented custom glassmorphism components and fluid background animations. Optimized for mobile responsiveness and SEO best practices.',
-            stack: ['React', 'Tailwind', 'Framer Motion'],
-            metric: 'TECHNICAL UI',
-            image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&h=600&fit=crop'
-        },
-        {
-            id: '05',
-            category: 'BACKEND SYSTEMS',
-            title: 'API Gateway Service',
-            year: '2024',
-            description: 'Microservices gateway with rate limiting, logging, and automated documentation.',
-            fullDescription: 'Built a robust API Gateway using Node.js and Express to manage microservices communication. Implemented Redis-based rate limiting and Winston logging for monitoring. Automated API documentation using Swagger UI.',
-            stack: ['Node.js', 'Redis', 'Express'],
-            metric: '<10ms OVERHEAD',
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop'
-        },
-        {
-            id: '06',
-            category: 'MOBILE ENGINEERING',
-            title: 'Inventory Sync App',
-            year: '2023',
-            description: 'Enterprise-grade offline-first mobile app for real-time inventory synchronization.',
-            fullDescription: 'Developed an offline-first mobile application using Flutter and SQLite. Implemented background sync workers and conflict resolution logic for multi-user inventory management.',
-            stack: ['Flutter', 'SQLite', 'Riverpod'],
-            metric: 'OFFLINE-FIRST',
-            image: 'https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?w=800&h=600&fit=crop'
+            category: 'UTILITY APP',
+            title: 'To-Do App',
+            year: 'Oct 2024',
+            description: 'A feature-rich To-Do application built with Flutter for efficient task management and organization.',
+            fullDescription: 'Developed a clean and intuitive To-Do application using Flutter. Features include task categorization, priority levels, and persistent storage using SQLite. Designed with a focus on productivity and smooth user interactions across mobile platforms.',
+            stack: ['Flutter', 'Dart', 'SQLite'],
+            metric: 'OFFLINE PRODUCTIVITY',
+            image: todoImg,
+            github: 'https://github.com/DeepaKumawat89/To_do_App'
         }
     ];
 
