@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import DetailModal from './DetailModal';
+import SpotlightCard from './SpotlightCard';
 import ecommerceImg from '../Images/E-Commerce App.png';
 import assistiveSysImg from '../Images/dd.jpg';
 import recruiterImg from '../Images/Recruiter App.png';
 import todoImg from '../Images/WorkFlow - App.png';
+import calculatorImg from '../Images/Calculator_Mobile_App.png';
+import notesImg from '../Images/Notes_website.png';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -19,22 +22,10 @@ const Projects = () => {
             stack: ['Flutter', 'Dart', 'Firebase'],
             metric: 'CROSS-PLATFORM',
             image: ecommerceImg,
-            github: 'https://github.com'
+            github: 'https://github.com/DeepaKumawat89/E_commerce-App'
         },
         {
             id: '02',
-            category: 'AI & COMPUTER VISION',
-            title: 'AI-Powered Assistive System',
-            year: 'July 2024',
-            description: 'Developed an AI-powered assistive system for the visually impaired with real-time object detection, face recognition, and text-to-speech capabilities.',
-            fullDescription: 'Integrated features like currency detection, weather updates, and voice commands for hands-free interaction. Deployed on NVIDIA Jetson Xavier NX with GPU acceleration, achieving 90% accuracy in real-time scene analysis and audio feedback.',
-            stack: ['Python', 'NVIDIA Jetson', 'PyCharm'],
-            metric: '90% ACCURACY',
-            image: assistiveSysImg,
-            github: 'https://github.com'
-        },
-        {
-            id: '03',
             category: 'MOBILE ENGINEERING',
             title: 'Recruiter Mobile App',
             year: '2024',
@@ -44,6 +35,18 @@ const Projects = () => {
             metric: 'STATE MGMT',
             image: recruiterImg,
             github: 'https://github.com/DeepaKumawat89/ARMII_Recruiter_app'
+        },
+        {
+            id: '03',
+            category: 'AI & COMPUTER VISION',
+            title: 'AI-Powered Assistive System',
+            year: 'July 2024',
+            description: 'Developed an AI-powered assistive system for the visually impaired with real-time object detection, face recognition, and text-to-speech capabilities.',
+            fullDescription: 'Integrated features like currency detection, weather updates, and voice commands for hands-free interaction. Deployed on NVIDIA Jetson Xavier NX with GPU acceleration, achieving 90% accuracy in real-time scene analysis and audio feedback.',
+            stack: ['Python', 'NVIDIA Jetson', 'PyCharm'],
+            metric: '90% ACCURACY',
+            image: assistiveSysImg,
+            github: 'https://github.com/DeepaKumawat89/AI-Powered-Assistive-System-for-the-Visually-Impaired'
         },
         {
             id: '04',
@@ -56,6 +59,30 @@ const Projects = () => {
             metric: 'OFFLINE PRODUCTIVITY',
             image: todoImg,
             github: 'https://github.com/DeepaKumawat89/To_do_App'
+        },
+        {
+            id: '05',
+            category: 'UTILITY APP',
+            title: 'Calculator App',
+            year: 'Nov 2024',
+            description: 'A sleek and functional calculator application built with Flutter, featuring a responsive UI and calculation history.',
+            fullDescription: 'Developed a high-performance calculator app using Flutter and Dart. Implemented advanced arithmetic logic and local storage to persist calculation history across sessions, ensuring a seamless user experience.',
+            stack: ['Flutter', 'Dart', 'Shared Preferences'],
+            metric: 'LOCAL STORAGE',
+            image: calculatorImg,
+            github: 'https://github.com/DeepaKumawat89/Calculator-App'
+        },
+        {
+            id: '06',
+            category: 'WEB ENGINEERING',
+            title: 'Notes Website',
+            year: 'Dec 2024',
+            description: 'A comprehensive notes-taking platform built with React, featuring secure authentication and cloud storage for media.',
+            fullDescription: 'Developed a feature-rich web application for managing digital notes. Integrated Firebase for robust user authentication and real-time database management. Utilized Cloudinary for efficient image and file uploads, and styled with Tailwind CSS for a modern, responsive user interface.',
+            stack: ['React', 'Firebase', 'Cloudinary', 'Tailwind CSS'],
+            metric: 'CLOUD SYNC',
+            image: notesImg,
+            github: 'https://github.com/DeepaKumawat89/Notes_Website'
         }
     ];
 
@@ -83,11 +110,12 @@ const Projects = () => {
                 {/* Single Column on Mobile, 2 on Tablet, 3 on Desktop */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                     {projects.map((project, index) => (
-                        <div
+                        <SpotlightCard
                             key={index}
                             onClick={() => setSelectedProject(project)}
-                            className="group relative bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards] cursor-pointer"
+                            className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden border border-pista/10 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] animate-[fadeInUp_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards] cursor-pointer"
                             style={{ animationDelay: `${index * 0.15}s` }}
+                            spotlightColor="rgba(197, 225, 165, 0.2)"
                         >
                             {/* Split Layout Container */}
                             <div className="flex flex-col md:flex-col h-full">
@@ -157,7 +185,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </SpotlightCard>
                     ))}
                 </div>
 

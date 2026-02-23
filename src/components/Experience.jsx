@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DetailModal from './DetailModal';
+import sibicImsImg from '../Images/SIBIC_IMS.png';
 
 const Experience = () => {
     const [selectedExperience, setSelectedExperience] = useState(null);
@@ -29,7 +30,8 @@ const Experience = () => {
             fullDescription: 'Implemented RESTful API integration between the mobile app and Spring Boot backend, achieving 95% crash-free execution. Used GetX for efficient state management, ensuring a streamlined development process and responsive UI.',
             stack: ['Flutter', 'Spring Boot', 'GetX'],
             metric: '95% CRASH-FREE',
-            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop'
+            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
+            detailImage: sibicImsImg
         }
     ];
 

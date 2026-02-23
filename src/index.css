@@ -143,6 +143,31 @@
   }
 }
 
+/* Dark Theme Overrides */
+.dark {
+  --color-pista: #98C379;
+  --color-pista-dark: #7CB342;
+  --color-pista-light: #2C3E2D;
+  --color-pista-gradient-start: #98C379;
+  --color-pista-gradient-end: #7CB342;
+
+  --color-cream: #0F172A;
+  --color-cream-dark: #020617;
+  --color-cream-light: #1E293B;
+
+  --color-white: #1E293B;
+  --color-glass: rgba(15, 23, 42, 0.85);
+  --color-glass-border: rgba(152, 195, 121, 0.2);
+
+  --color-text: #F1F5F9;
+  --color-text-muted: #94A3B8;
+  --color-text-light: #64748B;
+
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-hover: rgba(0, 0, 0, 0.5);
+  --color-pista-shadow: rgba(152, 195, 121, 0.1);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Tapestry&display=swap');
 
 :root {
@@ -204,6 +229,27 @@
 
 @utility gradient-pista {
   background: linear-gradient(135deg, var(--color-pista-gradient-start) 0%, var(--color-pista-gradient-end) 100%);
+}
+
+@utility spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+@utility spotlight-card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      var(--spotlight-color, rgba(197, 225, 165, 0.15)),
+      transparent 40%);
+  z-index: 10;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.spotlight-card:hover .spotlight-card-overlay {
+  opacity: 1;
 }
 
 /* Custom Scrollbar */

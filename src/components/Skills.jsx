@@ -1,4 +1,5 @@
 import React from 'react';
+import SpotlightCard from './SpotlightCard';
 
 const Skills = () => {
     const technologies = [
@@ -62,17 +63,18 @@ const Skills = () => {
 
 // Extracted Badge Component for cleaner row logic
 const TechBadge = ({ tech, delay }) => (
-    <div
-        className="group flex items-center gap-3 md:gap-5 bg-white border border-pista/20 px-5 py-3 md:px-8 md:py-5 rounded-full shadow-sm hover:bg-pista-dark hover:border-pista-dark hover:shadow-lg hover:shadow-pista/20 hover:-translate-y-1 transition-all duration-300 cursor-default animate-[fadeInUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]"
+    <SpotlightCard
+        className="group flex items-center gap-3 md:gap-5 bg-white/80 dark:bg-white/5 border border-pista/20 px-5 py-3 md:px-8 md:py-5 rounded-full shadow-sm hover:bg-pista-dark hover:border-pista-dark hover:shadow-lg hover:shadow-pista/20 hover:-translate-y-1 transition-all duration-300 cursor-default animate-[fadeInUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]"
         style={{ animationDelay: `${delay}s` }}
+        spotlightColor="rgba(197, 225, 165, 0.4)"
     >
-        <span className="w-5 h-5 md:w-7 md:h-7 text-pista-dark group-hover:text-white transition-colors duration-300">
+        <span className="w-5 h-5 md:w-7 md:h-7 text-pista-dark group-hover:text-white transition-colors duration-300 relative z-20">
             {tech.icon}
         </span>
-        <span className="text-sm md:text-xl font-bold text-text-muted group-hover:text-white transition-colors duration-300 tracking-tight">
+        <span className="text-sm md:text-xl font-bold text-text-muted group-hover:text-white transition-colors duration-300 tracking-tight relative z-20">
             {tech.name}
         </span>
-    </div>
+    </SpotlightCard>
 );
 
 export default Skills;

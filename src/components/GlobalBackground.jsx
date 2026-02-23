@@ -4,7 +4,7 @@ const GlobalBackground = () => {
     return (
         <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
             {/* Global Cream Base */}
-            <div className="absolute inset-0 bg-[#FFFBF5]"></div>
+            <div className="absolute inset-0 bg-cream transition-colors duration-500"></div>
 
             {/* Subtle Technical Grid */}
             <div

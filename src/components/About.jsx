@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section id="about" className="relative py-12 md:py-16 overflow-hidden">
+        <section id="about" className="relative pt-12 pb-12 md:py-16 overflow-hidden">
             {/* Structural Background Architectural Lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-[15%] w-px h-full bg-pista/20"></div>

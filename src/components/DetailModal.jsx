@@ -35,7 +35,7 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             ></div>
 
             {/* Modal Content */}
-            <div className="relative w-full h-full md:h-[90vh] md:max-w-4xl md:my-8 bg-[#FFFBF5] md:rounded-3xl shadow-2xl overflow-hidden animate-[slideUp_0.4s_ease-out]">
+            <div className="relative w-full h-full md:h-[90vh] md:max-w-4xl md:my-8 bg-cream md:rounded-3xl shadow-2xl overflow-hidden animate-[slideUp_0.4s_ease-out]">
                 {/* Close Button */}
                 <button
                     onClick={onClose}
@@ -117,7 +117,7 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
                         {data.image && (
                             <div className="relative w-full h-[250px] md:h-[450px] rounded-2xl overflow-hidden border border-pista/10 shadow-inner">
                                 <img
-                                    src={data.image}
+                                    src={data.detailImage || data.image}
                                     alt={data.title || data.role}
                                     className="w-full h-full object-cover"
                                 />

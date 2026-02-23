@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleTheme }) => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -49,7 +49,23 @@ const Navbar = () => {
                             <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-pista-dark rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></span>
                         </a>
                     ))}
+
                     <div className="w-px h-6 bg-pista/10 mx-3"></div>
+
+                    {/* Theme Toggle Button */}
+                    <button
+                        onClick={toggleTheme}
+                        className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-text hover:text-pista-dark hover:scale-110 transition-all duration-300 mr-2 relative overflow-hidden group"
+                        aria-label="Toggle Theme"
+                    >
+                        <div className={`transition-all duration-500 ${isDarkMode ? 'translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                        </div>
+                        <div className={`absolute transition-all duration-500 ${isDarkMode ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                        </div>
+                    </button>
+
                     <a
                         href="#contact"
                         className="px-8 py-2.5 gradient-pista text-white rounded-full text-[11px] font-black uppercase tracking-widest hover:shadow-2xl hover:shadow-pista/40 transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg"
@@ -58,18 +74,35 @@ const Navbar = () => {
                     </a>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="md:hidden w-10 h-10 flex items-center justify-center text-text hover:text-pista-dark transition-all duration-300 rounded-full hover:bg-pista-light/20 relative z-50 bg-white/50"
-                    aria-label="Toggle menu"
-                >
-                    {mobileMenuOpen ? (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                    ) : (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M12 12h8M4 18h16" /></svg>
-                    )}
-                </button>
+                {/* Mobile Icons Container */}
+                <div className="flex items-center gap-3 md:hidden">
+                    {/* Theme Toggle Button (Mobile) */}
+                    <button
+                        onClick={toggleTheme}
+                        className="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 border border-white/20 text-text hover:text-pista-dark transition-all duration-300 relative overflow-hidden"
+                        aria-label="Toggle Theme"
+                    >
+                        <div className={`transition-all duration-500 ${isDarkMode ? 'translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                        </div>
+                        <div className={`absolute transition-all duration-500 ${isDarkMode ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                        </div>
+                    </button>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="w-10 h-10 flex items-center justify-center text-text hover:text-pista-dark transition-all duration-300 rounded-full hover:bg-pista-light/20 relative z-50 bg-white/50"
+                        aria-label="Toggle menu"
+                    >
+                        {mobileMenuOpen ? (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                        ) : (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M12 12h8M4 18h16" /></svg>
+                        )}
+                    </button>
+                </div>
 
                 {/* Mobile Menu Dropdown */}
                 {mobileMenuOpen && (
