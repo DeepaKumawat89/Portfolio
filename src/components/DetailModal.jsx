@@ -94,6 +94,20 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
                                     <div className="text-xl font-black text-text tracking-tighter">{data.metric}</div>
                                 </div>
 
+                                {data.live && (
+                                    <a
+                                        href={data.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 bg-pista-dark text-white px-6 py-3 rounded-full border-2 border-pista-dark hover:bg-text hover:border-text transition-all duration-300 shadow-lg group/btn"
+                                    >
+                                        <span className="text-sm font-black uppercase tracking-widest">Live Demo</span>
+                                        <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                )}
+
                                 {data.github && (
                                     <a
                                         href={data.github}

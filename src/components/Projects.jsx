@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import DetailModal from './DetailModal';
 import SpotlightCard from './SpotlightCard';
 import ecommerceImg from '../Images/E-Commerce App.png';
-import assistiveSysImg from '../Images/dd.jpg';
+import assistiveSysImg from '../Images/ai_assistive_system_new.png';
+import assistiveSysDetailImg from '../Images/dd.jpg';
 import recruiterImg from '../Images/Recruiter App.png';
 import todoImg from '../Images/WorkFlow - App.png';
 import calculatorImg from '../Images/Calculator_Mobile_App.png';
@@ -46,6 +47,7 @@ const Projects = () => {
             stack: ['Python', 'NVIDIA Jetson', 'PyCharm'],
             metric: '90% ACCURACY',
             image: assistiveSysImg,
+            detailImage: assistiveSysDetailImg,
             github: 'https://github.com/DeepaKumawat89/AI-Powered-Assistive-System-for-the-Visually-Impaired'
         },
         {
@@ -82,7 +84,7 @@ const Projects = () => {
             stack: ['React', 'Firebase', 'Cloudinary', 'Tailwind CSS'],
             metric: 'CLOUD SYNC',
             image: notesImg,
-            github: 'https://github.com/DeepaKumawat89/Notes_Website'
+            live: 'https://notes-website-mu.vercel.app'
         }
     ];
 
