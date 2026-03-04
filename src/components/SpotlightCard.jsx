@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(197, 225, 165, 0.15)" }) => {
+const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(197, 225, 165, 0.15)", onClick }) => {
     const divRef = useRef(null);
     const [isFocused, setIsFocused] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -29,6 +29,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(197, 2
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={onClick}
             className={`spotlight-card ${className}`}
             style={{
                 "--mouse-x": `${position.x}px`,
@@ -44,5 +45,6 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(197, 2
         </div>
     );
 };
+
 
 export default SpotlightCard;
